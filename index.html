@@ -103,6 +103,7 @@
       flex-direction: column;
       gap: 12px;
       align-items: center;
+      width: 100%;
     }
 
     .profile-header-info h2 {
@@ -139,14 +140,35 @@
       object-fit: contain;
     }
 
-    /* Testo bio ordinato, pulito e senza fronzoli */
+    /* Stile della bio allineato in modo naturale e pulito */
     .bio-text {
       font-size: 0.95rem;
       font-weight: 600;
-      line-height: 1.8;
+      line-height: 1.7;
       color: #333333;
       max-width: 600px;
-      margin-top: 10px;
+      margin-top: 15px;
+      text-align: left;
+    }
+
+    .bio-text a {
+      color: #111;
+      font-weight: 800;
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+    }
+
+    .bio-text a:hover {
+      color: #666;
+    }
+
+    .italy-flag {
+      width: 16px;
+      height: 16px;
+      vertical-align: middle;
+      object-fit: contain;
+      margin-left: 2px;
+      margin-right: 2px;
     }
 
     .social-buttons-container {
@@ -228,14 +250,10 @@
           <span class="tag">INTP</span>
         </div>
 
-        <!-- Testo bio pulito e ordinato -->
-        <p class="bio-text">
-          Living in Italy.<br>
-          High school student attending a culinary school.<br>
-          I make websites just for fun on Neocities, and it has become one of my favorite hobbies.<br>
-          I love taking random photos when I'm out and about.<br>
-          No specific favorite color, I like them all, and I am a huge anime fan (check my watchlist!).
-        </p>
+        <!-- Testo bio naturale con link e iconcina bandiera -->
+        <div class="bio-text">
+          i live in Italy <img src="italy.png" alt="Italy Flag" class="italy-flag"> and i'm currently surviving high school at a culinary school. when i'm not busy with that, you'll probably find me coding silly little websites on neocities—it's pretty much my main hobby now. i also love snapping <a href="https://seea-star.github.io/Cosmic-S-Gallery/">random photos</a> of things when i'm out and about. i don't really have a single favorite color because i like them all, and yes, i watch way too many anime (feel free to check out my <a href="https://seea-star.github.io/Cosmic-S-Watchlist/">watchlist</a>!).
+        </div>
       </div>
     </div>
 
