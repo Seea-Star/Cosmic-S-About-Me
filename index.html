@@ -126,11 +126,10 @@
       box-shadow: 2px 2px 0px #111;
     }
 
-    /* Sezione Pulsanti Social in basso */
     .social-buttons-container {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 14px;
       justify-content: center;
       margin-top: 10px;
       padding-top: 20px;
@@ -138,11 +137,11 @@
     }
 
     .social-btn {
-      width: 50px;
-      height: 50px;
+      width: 48px;
+      height: 48px;
       background: #ffffff;
       border: 2px solid #111111;
-      border-radius: 14px;
+      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -168,16 +167,7 @@
       height: 100%;
       object-fit: cover;
       display: block;
-    }
-
-    /* Stile per il pulsante vuoto di Neocities */
-    .social-btn-empty {
-      background: #F3EEDA;
-      font-size: 0.65rem;
-      font-weight: 800;
-      color: #111;
-      text-align: center;
-      padding: 4px;
+      border-radius: 50%;
     }
 
     @media screen and (max-width: 600px) {
@@ -219,7 +209,7 @@
       </div>
     </div>
 
-    <!-- Pulsanti Social in basso -->
+    <!-- Pulsanti Social Circolari -->
     <div class="social-buttons-container">
       <!-- Email -->
       <a href="mailto:seea-star@proton.me" class="social-btn" title="Email">
@@ -246,9 +236,9 @@
         <img src="URL_IMMAGINE_TIKTOK" alt="TikTok">
       </a>
 
-      <!-- Neocities (Pulsante vuoto temporaneo) -->
-      <a href="https://neocities.org/site/cosmic-seea" class="social-btn social-btn-empty" title="Neocities Profile">
-        NEO
+      <!-- Neocities Profile -->
+      <a href="https://neocities.org/site/cosmic-seea" class="social-btn" title="Neocities Profile">
+        <img src="URL_IMMAGINE_NEOCITIES" alt="Neocities">
       </a>
     </div>
 
