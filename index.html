@@ -38,7 +38,7 @@
       box-shadow: 6px 6px 0px #111111;
       display: flex;
       flex-direction: column;
-      gap: 24px;
+      gap: 28px;
       position: relative;
       overflow: hidden;
     }
@@ -75,7 +75,7 @@
     }
     .back-home-btn:hover { transform: translate(-1px, -1px); box-shadow: 3px 3px 0px #111; }
 
-    /* Blocco profilo senza sfondo né bordo (eliminato l'effetto scatola interna) */
+    /* Blocco profilo centrato, ingrandito e senza riquadro */
     .profile-card-main {
       background: transparent;
       border: none;
@@ -83,30 +83,32 @@
       padding: 10px 0;
       box-shadow: none;
       display: flex;
-      gap: 24px;
+      flex-direction: column;
       align-items: center;
+      text-align: center;
+      gap: 20px;
     }
 
-    /* Foto profilo ingrandita */
+    /* Foto profilo ulteriormente ingrandita */
     .profile-pic {
-      width: 175px;
-      height: 175px;
+      width: 210px;
+      height: 210px;
       background: #eee;
-      border: 2px solid #111;
-      border-radius: 20px;
+      border: 3px solid #111;
+      border-radius: 26px;
       object-fit: cover;
-      flex-shrink: 0;
-      box-shadow: 3px 3px 0px #111;
+      box-shadow: 4px 4px 0px #111;
     }
 
     .profile-header-info {
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 12px;
+      align-items: center;
     }
 
     .profile-header-info h2 {
-      font-size: 1.8rem;
+      font-size: 2.3rem;
       font-weight: 800;
       letter-spacing: 1px;
     }
@@ -114,7 +116,8 @@
     .tags-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 10px;
+      justify-content: center;
       margin-top: 4px;
       align-items: center;
     }
@@ -122,20 +125,20 @@
     .tag {
       background: #F3EEDA;
       border: 2px solid #111;
-      padding: 4px 10px;
-      border-radius: 10px;
-      font-size: 0.72rem;
+      padding: 6px 14px;
+      border-radius: 12px;
+      font-size: 0.85rem;
       font-weight: 800;
       box-shadow: 2px 2px 0px #111;
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
     }
 
-    /* Icone nei tag */
+    /* Icone nei tag ingrandite proporzionalmente */
     .tag-icon {
-      width: 14px;
-      height: 14px;
+      width: 18px;
+      height: 18px;
       object-fit: contain;
     }
 
@@ -149,7 +152,7 @@
       border-top: 2px dashed #ddd;
     }
 
-    /* Pulsanti social con l'effetto anello nero che avevi richiesto */
+    /* Pulsanti social con l'effetto anello nero inalterati */
     .social-btn {
       width: 48px;
       height: 48px;
@@ -185,14 +188,6 @@
     }
 
     @media screen and (max-width: 600px) {
-      .profile-card-main {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-      .tags-row {
-        justify-content: center;
-      }
       .top-banner h1 {
         font-size: 1.6rem;
       }
@@ -212,7 +207,7 @@
       <img src="20260826_004752_0000.png" alt="Profile Picture" class="profile-pic">
       
       <div class="profile-header-info">
-        <h2>Seea <span style="font-weight: 600; font-size: 1.1rem; color: #666;">(Seea Star)</span></h2>
+        <h2>Seea <span style="font-weight: 600; font-size: 1.3rem; color: #666;">(Seea Star)</span></h2>
         
         <div class="tags-row">
           <span class="tag">Female</span>
