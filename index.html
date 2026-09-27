@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COSMIC-S - About Me</title>
+  <link rel="icon" type="image/png" href="https://cosmic-seea.neocities.org/stamp-5.png">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: #f5f5f7;
+      background-image: 
+        linear-gradient(#e1e1e6 1px, transparent 1px),
+        linear-gradient(90deg, #e1e1e6 1px, transparent 1px);
+      background-size: 20px 20px;
+      color: #111111;
+      font-family: 'Quicksand', sans-serif;
+      padding: 30px 10px;
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+
+    .site-wrapper {
+      max-width: 980px;
+      width: 100%;
+      background: #ffffff;
+      border: 3px solid #111111;
+      border-radius: 32px;
+      padding: 24px;
+      margin-bottom: 30px;
+      box-shadow: 6px 6px 0px #111111;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .top-banner {
+      background: #111111;
+      border: 2px solid #111111;
+      border-radius: 20px;
+      padding: 14px 25px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      position: relative;
+      box-shadow: 4px 4px 0px #F3EEDA;
+    }
+
+    .top-banner h1 { 
+      font-size: 3.5rem; 
+      font-weight: 800; 
+      letter-spacing: 3px; 
+      color: #ffffff;
+      text-align: left;
+      line-height: 1;
+      text-shadow: 0 0 10px rgba(255,255,255,0.9), 0 0 20px rgba(255,255,255,0.6);
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: minmax(180px, 240px) minmax(220px, 1fr) minmax(160px, 220px);
+      gap: 16px;
+      align-items: stretch;
+      padding-bottom: 5px;
+      width: 100%;
+    }
+
+    .col-left, .col-center, .col-right {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      min-width: 0;
+      gap: 16px;
+    }
+
+    .paper-note-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .paper-note-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: drop-shadow(3px 3px 0px rgba(0,0,0,0.15));
+    }
+
+    .box {
+      background: #ffffff;
+      border: 2px solid #111111;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 3px 3px 0px #111111;
+    }
+    .box-header {
+      background: #f0f0f3;
+      border-bottom: 2px solid #111111;
+      padding: 8px 14px;
+      font-weight: 700;
+      font-size: 0.8rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .box-header-accent {
+      background: #F3EEDA;
+      border-bottom: 2px solid #111111;
+      padding: 8px 14px;
+      font-weight: 700;
+      font-size: 0.8rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #111111;
+    }
+    .box-body { padding: 14px; }
+
+    .box-dark {
+      background: #111111;
+      color: #ffffff;
+      border: 2px solid #111111;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 4px 4px 0px #F3EEDA; 
+    }
+    .box-dark .box-header {
+      background: #222222;
+      color: #ffffff;
+      border-bottom: 2px solid #444444;
+    }
+
+    .receipt-box {
+      background: #ffffff;
+      border: 2px solid #111111;
+      padding: 18px 14px;
+      box-shadow: 4px 4px 0px #111111;
+      transform: rotate(-2deg);
+      transition: transform 0.2s ease;
+    }
+    .receipt-box:hover { transform: rotate(0deg) scale(1.01); }
+    .receipt-title { text-align: center; font-weight: 800; font-size: 0.85rem; }
+    .receipt-dash { border: none; border-top: 2px dashed #111; margin: 10px 0; }
+
+    .receipt-menu-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .receipt-menu-list a {
+      color: #111;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.78rem;
+      display: block;
+      padding: 8px 10px;
+      transition: all 0.15s ease;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+
+    .receipt-menu-list a.active, .receipt-menu-list a:hover {
+      background: #F3EEDA;
+      color: #111111;
+    }
+
+    .receipt-barcode {
+      text-align: center;
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+      margin-top: 8px;
+    }
+
+    .calendar-graphic-dark { 
+      width: 36px; height: 36px; border: 2px solid #F3EEDA; border-radius: 6px; background: #222; margin: 0 auto 8px; display: flex; flex-direction: column; overflow: hidden; box-shadow: 2px 2px 0px #F3EEDA;
+    }
+    .calendar-graphic-top-dark { background: #F3EEDA; height: 10px; width: 100%; }
+    .calendar-graphic-body-dark { flex: 1; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 800; color: #fff; }
+
+    .mini-calendar-dark { width: 100%; font-size: 0.68rem; text-align: center; border-collapse: collapse; }
+    .mini-calendar-dark th, .mini-calendar-dark td { padding: 4px 2px; border: none; color: #ffffff; }
+    .mini-calendar-dark th { 
+      background: #F3EEDA; 
+      color: #111111; 
+      font-size: 0.6rem; 
+      font-weight: 800; 
+      border-radius: 4px; 
+    }
+    .mini-calendar-dark td.today-dark { background: #F3EEDA; color: #111111; font-weight: 800; border-radius: 4px; }
+
+    .pixel-clock-box-dark {
+      background: #111;
+      border: 2px solid #111;
+      border-radius: 16px;
+      padding: 12px;
+      text-align: center;
+      box-shadow: 4px 4px 0px #F3EEDA;
+    }
+    .pixel-clock-time-dark {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 0.85rem;
+      color: #F3EEDA;
+      letter-spacing: 1px;
+    }
+
+    .ipod-player-box {
+      background: #ffffff;
+      border: 2px solid #111111;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 3px 3px 0px #111111;
+    }
+    .ipod-player-inner {
+      text-align: center;
+      padding: 12px 10px;
+    }
+    .ipod-screen-clean { 
+      background: #222; 
+      color: #fff; 
+      border: 2px solid #444; 
+      border-radius: 12px; 
+      padding: 12px 10px; 
+      font-size: 0.78rem; 
+      font-weight: 700; 
+      margin-bottom: 12px; 
+      min-height: 55px; 
+      display: flex; 
+      flex-direction: column; 
+      justify-content: center;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
+    }
+    .ipod-controls-clean { 
+      display: flex; 
+      justify-content: center; 
+      gap: 12px; 
+      align-items: center; 
+    }
+    .ipod-btn-ctrl-clean { 
+      background: #222; 
+      color: #fff;
+      border: 2px solid #555; 
+      border-radius: 50%; 
+      width: 36px; 
+      height: 36px; 
+      font-size: 0.8rem; 
+      font-weight: 800; 
+      cursor: pointer; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      box-shadow: 2px 2px 0px #444; 
+      transition: transform 0.1s ease;
+    }
+    .ipod-btn-ctrl-clean:active { 
+      transform: translate(1px, 1px); 
+      box-shadow: 1px 1px 0px #444; 
+    }
+
+    .nav-box-btn {
+      width: 100%;
+      background: #ffffff;
+      border: 2px solid #111;
+      border-radius: 16px;
+      padding: 10px;
+      font-weight: 800;
+      font-size: 0.75rem;
+      cursor: pointer;
+      box-shadow: 3px 3px 0px #111;
+      text-align: center;
+      transition: transform 0.1s ease;
+      text-decoration: none;
+      color: #111;
+      display: block;
+    }
+    .nav-box-btn:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0px #111; }
+    .nav-box-btn:active { transform: translate(1px, 1px); box-shadow: 2px 2px 0px #222; }
+
+    .nav-box-btn-dark {
+      width: 100%;
+      background: #111111;
+      color: #ffffff;
+      border: 2px solid #111;
+      border-radius: 16px;
+      padding: 10px;
+      font-weight: 800;
+      font-size: 0.75rem;
+      cursor: pointer;
+      box-shadow: 4px 4px 0px #F3EEDA; 
+      text-align: center;
+      transition: transform 0.1s ease;
+      text-decoration: none;
+      display: block;
+    }
+    .nav-box-btn-dark:hover { transform: translate(-1px, -1px); box-shadow: 5px 5px 0px #F3EEDA; }
+    .nav-box-btn-dark:active { transform: translate(1px, 1px); box-shadow: 2px 2px 0px #F3EEDA; }
+
+    .pure-card-img {
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: drop-shadow(4px 4px 0px #111);
+      transition: transform 0.15s ease;
+    }
+    .pure-card-img:hover { transform: translateY(-2px); }
+
+    .about-info-box {
+      background: #ffffff;
+      border: 2px solid #111111;
+      border-radius: 16px;
+      padding: 14px;
+      margin-top: 10px;
+      box-shadow: 3px 3px 0px #111111;
+      font-size: 0.8rem;
+      line-height: 1.6;
+    }
+    .about-info-box h3 {
+      font-size: 0.9rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      border-bottom: 2px dashed #111;
+      padding-bottom: 4px;
+    }
+    .about-info-box ul {
+      list-style-type: square;
+      padding-left: 20px;
+    }
+
+    /* --- CODICE RESPONSIVE PER SMARTPHONE --- */
+    @media screen and (max-width: 768px) {
+      body {
+        padding: 10px 5px;
+      }
+      .site-wrapper {
+        padding: 14px;
+        border-radius: 20px;
+        box-shadow: 4px 4px 0px #111111;
+        gap: 16px;
+      }
+      .top-banner h1 {
+        font-size: 2.2rem;
+      }
+      .grid-container {
+        grid-template-columns: 100%;
+        gap: 16px;
+      }
+      .col-left, .col-center, .col-right {
+        gap: 16px;
+      }
+      .receipt-box {
+        transform: rotate(0deg);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="about-view" class="site-wrapper">
+
+    <header class="top-banner">
+      <h1>ABOUT ME</h1>
+    </header>
+
+    <div class="grid-container">
+
+      <!-- COLONNA SINISTRA -->
+      <aside class="col-left">
+        <div class="receipt-box">
+          <div class="receipt-title">.☘︎ ݁˖ MENU ☰ ❞</div>
+          <hr class="receipt-dash">
+          <ul class="receipt-menu-list">
+            <li><a href="https://cosmic-seea.neocities.org/">˙ᵕ˙ HOME</a></li>
+            <li><a href="https://cosmic-seea.neocities.org/Updates">UPDATES ✦</a></li>
+            <li><a href="https://seea-star.github.io/Cosmic-S-Blog/">BLOG ✐ᝰ</a></li>
+            <li><a href="https://seea-star.github.io/Cosmic-S-Gallery/">GALLERY ⋆˚꩜｡</a></li>
+            <li><a href="https://seea-star.github.io/Cosmic-S-Stories/">⎚-⎚ STORIES</a></li>
+            <li><a href="TUO_LINK_GAMES">[+..••] MINI-GAMES</a></li>
+            <li><a href="https://seea-star.github.io/Cosmic-S-Watchlist/">WATCHLIST ⭑.ᐟ</a></li>
+          </ul>
+          <hr class="receipt-dash">
+          <div class="receipt-barcode">𝄃𝄃𝄂𝄂𝄀𝄁𝄃𝄂𝄂𝄃</div>
+        </div>
+
+        <div class="box-dark">
+          <div class="box-header"><span id="cal-month-title">calendar</span><div style="width:12px; height:12px; border:2px solid #F3EEDA; border-radius:2px; background: #F3EEDA;"></div></div>
+          <div class="box-body">
+            <div class="calendar-graphic-dark">
+              <div class="calendar-graphic-top-dark"></div>
+              <div class="calendar-graphic-body-dark" id="cal-day-number">--</div>
+            </div>
+            <table class="mini-calendar-dark">
+              <thead>
+                <tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr>
+              </thead>
+              <tbody id="calendar-body">
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="box-header-accent"><span>link_me</span><span>★</span></div>
+          <div class="box-body" style="text-align: center; display: flex; flex-direction: column; gap: 10px; align-items: center;">
+            <div>
+              <a href="https://cosmic-seea.neocities.org/" target="_blank">
+                <img src="https://cosmic-seea.neocities.org/button.gif" alt="My Button" style="width: 88px; height: 31px; display: block; image-rendering: pixelated;" onerror="this.src='https://via.placeholder.com/88x31/111/fff?text=88x31';">
+              </a>
+            </div>
+            <div style="border: 2px dashed #111; padding: 8px; border-radius: 10px; font-size: 0.65rem; font-family: monospace; width: 100%; background: #fdfdfd; word-break: break-all; text-align: left;">
+              &lt;a href="https://cosmic-seea.neocities.org/" target="_blank"&gt;&lt;img src="https://cosmic-seea.neocities.org/button.gif" alt="Cosmic-S"&gt;&lt;/a&gt;
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <a href="https://seea-star.github.io/Cosmic-S-Webrings/" class="nav-box-btn-dark" style="text-decoration: none;">
+            ★ WEBRINGS -&gt;
+          </a>
+        </div>
+      </aside>
+
+      <!-- COLONNA CENTRALE (CONTENUTO ABOUT ME) -->
+      <main class="col-center">
+        <div style="background: #111111; color: #ffffff; border: 2px solid #111111; border-radius: 22px; overflow: hidden; width: 100%; box-shadow: 4px 4px 0px #F3EEDA;">
+          <div class="box-body" style="font-size: 0.82rem; line-height: 1.5; padding: 20px;">
+            <p style="font-weight: 800; font-size: 1rem; margin-bottom: 8px; color: #ffffff;">✦ Meet Seea ✦</p>
+            <p style="margin-bottom: 10px;">Welcome to my personal corner! I'm Seea, creator and webmaster behind <strong>COSMIC-S</strong>.</p>
+            <p style="margin-bottom: 10px;">I love everything related to retro web design, indie aesthetics, digital stamps, collecting stamps, and building cute interactive spaces on the internet.</p>
+            <p style="margin-bottom: 10px;">When I'm not coding or fixing layout bugs, you can usually find me reading manga, watching anime (big fan of <em>Spy x Family</em>! 🥜), or listening to music while exploring other cool websites in the Neocities community.</p>
+            <p>Feel free to look around, sign my guestbook, or grab my site button!</p>
+          </div>
+        </div>
+
+        <!-- SEZIONE DETTAGLI / INFO PERSONALI -->
+        <div class="about-info-box">
+          <h3>✎ Quick Facts</h3>
+          <ul>
+            <li><strong>Name:</strong> Seea</li>
+            <li><strong>Pronouns:</strong> She/Her</li>
+            <li><strong>Personality:</strong> INTP 🧩</li>
+            <li><strong>Zodiac Sign:</strong> Sagittarius ♐</li>
+            <li><strong>Hobbies:</strong> Web design, coding mini-games, collecting digital stamps, drawing.</li>
+          </ul>
+        </div>
+
+        <div style="width: 100%;">
+          <img src="./about-me-card.png" alt="about_me.id" class="pure-card-img">
+        </div>
+
+        <div style="width: 100%;">
+          <a href="https://seea-star.github.io/Cosmic-S-My-Stamps/" class="nav-box-btn" style="display: block; text-decoration: none;">
+            𓍢ִ໋🀦 MY STAMPS -&gt;
+          </a>
+        </div>
+      </main>
+
+      <!-- COLONNA DESTRA -->
+      <aside class="col-right">
+        <div class="paper-note-container">
+          <img src="note.png" alt="Note Paper" class="paper-note-img">
+        </div>
+
+        <div class="pixel-clock-box-dark">
+          <div class="pixel-clock-time-dark" id="pixel-clock">00:00:00</div>
+        </div>
+
+        <a href="https://cosmic-s.atabook.org/" target="_blank" class="nav-box-btn" style="display: block; text-decoration: none;">
+          ✎ SIGN GUESTBOOK -&gt;
+        </a>
+
+        <div class="box-dark">
+          <div class="box-header"><span>chat box</span><span>(๑>◡<๑)</span></div>
+          <div class="box-body" style="padding: 10px; background: #111111;">
+            <iframe src="https://www5.cbox.ws/box/?boxid=966010&boxtag=Jzu1YD" width="100%" height="250" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
+          </div>
+        </div>
+
+        <div>
+          <div class="ipod-player-box">
+            <div class="ipod-player-inner">
+              <div class="ipod-screen-clean" id="ipod-screen-text">YouTube Music<br><strong>Ready to Play</strong></div>
+              <div style="display:none;">
+                <div id="youtube-player"></div>
+              </div>
+              <div class="ipod-controls-clean">
+                <button class="ipod-btn-ctrl-clean" onclick="prevSong()">&#10094;&#10094;</button>
+                <button class="ipod-btn-ctrl-clean" id="play-pause-btn" onclick="togglePlay()">&#9654;</button>
+                <button class="ipod-btn-ctrl-clean" onclick="nextSong()">&#10095;&#10095;</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+
+  </div>
+
+  <script>
+    let player;
+    let isPlaying = false;
+    const playPauseBtn = document.getElementById('play-pause-btn');
+    const screenText = document.getElementById('ipod-screen-text');
+
+    const tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    const firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('youtube-player', {
+        height: '200',
+        width: '200',
+        playerVars: {
+          'listType': 'playlist',
+          'list': 'PLCnZsxXddm5W5wSYpaoML1rSXuwtiHAXy',
+          'index': 0
+        },
+        events: {
+          'onReady': onPlayerReady,
+          'onStateChange': onPlayerStateChange
+        }
+      });
+    }
+
+    function onPlayerReady(event) {
+      screenText.innerHTML = `YouTube Music<br><strong>Ready to Play</strong>`;
+    }
+
+    function onPlayerStateChange(event) {
+      if (event.data == YT.PlayerState.PLAYING) {
+        isPlaying = true;
+        playPauseBtn.innerHTML = "&#10074;&#10074;";
+        try {
+          const videoData = player.getVideoData();
+          if (videoData && videoData.title) {
+            screenText.innerHTML = `Now Playing:<br><strong>${videoData.title}</strong>`;
+          }
+        } catch(e) {}
+      } else if (event.data == YT.PlayerState.PAUSED || event.data == YT.PlayerState.ENDED) {
+        isPlaying = false;
+        playPauseBtn.innerHTML = "&#9654;";
+      }
+    }
+
+    function togglePlay() {
+      if (!player) return;
+      if (isPlaying) {
+        player.pauseVideo();
+      } else {
+        player.playVideo();
+      }
+    }
+
+    function nextSong() {
+      if (!player) return;
+      player.nextVideo();
+    }
+
+    function prevSong() {
+      if (!player) return;
+      player.previousVideo();
+    }
+
+    function generateCalendar() {
+      const today = new Date();
+      const currentDay = today.getDate();
+      const currentMonth = today.getMonth();
+      const currentYear = today.getFullYear();
+      const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+      document.getElementById('cal-month-title').innerText = monthNames[currentMonth].toLowerCase();
+      document.getElementById('cal-day-number').innerText = currentDay;
+
+      const firstDayOfMonth = new Date(currentYear, currentMonth, 1).getDay();
+      const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+      const tbody = document.getElementById('calendar-body');
+      tbody.innerHTML = '';
+
+      let date = 1;
+      for (let i = 0; i < 6; i++) {
+        let row = document.createElement('tr');
+        let hasDate5 = false;
+
+        for (let j = 0; j < 7; j++) {
+          let cell = document.createElement('td');
+          if (i === 0 && j < firstDayOfMonth) {
+            cell.innerText = '';
+          } else if (date > daysInMonth) {
+            cell.innerText = '';
+            date++;
+          } else {
+            cell.innerText = date;
+            if (date === currentDay) {
+              cell.classList.add('today-dark');
+            }
+            date++;
+            hasDate5 = true;
+          }
+          row.appendChild(cell);
+        }
+        if (hasDate5) {
+          tbody.appendChild(row);
+        }
+      }
+    }
+
+    function updatePixelClock() {
+      const now = new Date();
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+      document.getElementById('pixel-clock').innerText = `${hours}:${minutes}:${seconds}`;
+    }
+
+    generateCalendar();
+    setInterval(updatePixelClock, 1000);
+    updatePixelClock();
+  </script>
+
+</body>
+</html>
