@@ -28,7 +28,7 @@
     }
 
     .site-wrapper {
-      max-width: 800px;
+      max-width: 750px;
       width: 100%;
       background: #ffffff;
       border: 3px solid #111111;
@@ -55,7 +55,7 @@
     }
 
     .top-banner h1 { 
-      font-size: 2.5rem; 
+      font-size: 2.2rem; 
       font-weight: 800; 
       letter-spacing: 2px; 
       color: #ffffff;
@@ -75,140 +75,118 @@
     }
     .back-home-btn:hover { transform: translate(-1px, -1px); box-shadow: 3px 3px 0px #111; }
 
-    /* Profilo Layout Principale */
-    .profile-container {
-      display: grid;
-      grid-template-columns: 240px 1fr;
-      gap: 24px;
-      align-items: start;
-    }
-
-    /* Colonna Sinistra: Foto e Info Rapide */
-    .profile-sidebar {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .profile-pic-box {
+    /* Layout Profilo Unificato */
+    .profile-card-main {
       background: #ffffff;
       border: 2px solid #111111;
-      border-radius: 22px;
-      padding: 12px;
+      border-radius: 24px;
+      padding: 24px;
       box-shadow: 4px 4px 0px #111111;
-      text-align: center;
+      display: flex;
+      gap: 24px;
+      align-items: center;
     }
 
     .profile-pic {
-      width: 100%;
-      aspect-ratio: 1 / 1;
+      width: 140px;
+      height: 140px;
       background: #eee;
       border: 2px solid #111;
-      border-radius: 16px;
+      border-radius: 20px;
       object-fit: cover;
-      display: block;
+      flex-shrink: 0;
+      box-shadow: 3px 3px 0px #111;
     }
 
-    .box {
-      background: #ffffff;
-      border: 2px solid #111111;
-      border-radius: 22px;
-      overflow: hidden;
-      box-shadow: 4px 4px 0px #111111;
-    }
-
-    .box-header-accent {
-      background: #F3EEDA;
-      border-bottom: 2px solid #111111;
-      padding: 10px 14px;
-      font-weight: 800;
-      font-size: 0.8rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: #111111;
-    }
-
-    .box-body { 
-      padding: 16px; 
-      font-size: 0.8rem; 
-      line-height: 1.6;
-    }
-
-    .info-list {
-      list-style: none;
+    .profile-header-info {
       display: flex;
       flex-direction: column;
       gap: 8px;
     }
 
-    .info-list li {
-      display: flex;
-      justify-content: space-between;
-      border-bottom: 1px dashed #ddd;
-      padding-bottom: 4px;
-    }
-
-    .info-list span:first-child {
-      font-weight: 700;
-      color: #666;
-    }
-
-    .info-list span:last-child {
+    .profile-header-info h2 {
+      font-size: 1.8rem;
       font-weight: 800;
-      color: #111;
+      letter-spacing: 1px;
     }
 
-    /* Colonna Destra: Bio e Dettagli */
-    .profile-main-content {
+    .tags-row {
       display: flex;
-      flex-direction: column;
-      gap: 20px;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 4px;
     }
 
-    .bio-card {
+    .tag {
+      background: #F3EEDA;
+      border: 2px solid #111;
+      padding: 4px 10px;
+      border-radius: 10px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      box-shadow: 2px 2px 0px #111;
+    }
+
+    /* Sezioni di Contenuto */
+    .section-box {
       background: #111111;
       color: #ffffff;
       border: 2px solid #111111;
-      border-radius: 22px;
+      border-radius: 24px;
       padding: 24px;
       box-shadow: 4px 4px 0px #F3EEDA;
     }
 
-    .bio-card h2 {
-      font-size: 1.2rem;
+    .section-box h3 {
+      font-size: 1.1rem;
       font-weight: 800;
       margin-bottom: 12px;
       color: #F3EEDA;
     }
 
-    .bio-card p {
-      font-size: 0.85rem;
+    .section-box p {
+      font-size: 0.82rem;
       line-height: 1.6;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
-    .bio-card p:last-child {
+    .section-box p:last-child {
       margin-bottom: 0;
     }
 
-    /* Griglia per le sezioni extra */
-    .extra-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
+    .box-light {
+      background: #ffffff;
+      color: #111111;
+      border: 2px solid #111111;
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 4px 4px 0px #111111;
+    }
+
+    .box-light h3 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      color: #111;
+    }
+
+    .box-light p {
+      font-size: 0.82rem;
+      line-height: 1.6;
     }
 
     /* Responsive per smartphone */
-    @media screen and (max-width: 768px) {
-      .profile-container {
-        grid-template-columns: 100%;
+    @media screen and (max-width: 600px) {
+      .profile-card-main {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
       }
-      .extra-grid {
-        grid-template-columns: 100%;
+      .tags-row {
+        justify-content: center;
       }
       .top-banner h1 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
       }
     }
   </style>
@@ -222,65 +200,35 @@
       <a href="https://cosmic-seea.neocities.org/" class="back-home-btn">&lt;- HOME</a>
     </header>
 
-    <div class="profile-container">
-
-      <!-- COLONNA SINISTRA: FOTO E INFO BASE -->
-      <aside class="profile-sidebar">
-        <div class="profile-pic-box">
-          <!-- Sostituisci il link dell'immagine con la tua foto profilo -->
-          <img src="https://via.placeholder.com/200x200/111/fff?text=Tua+Foto" alt="Profile Picture" class="profile-pic">
-        </div>
-
-        <div class="box">
-          <div class="box-header-accent"><span>identity</span><span>★</span></div>
-          <div class="box-body">
-            <ul class="info-list">
-              <li><span>Name</span><span>Seea</span></li>
-              <li><span>Birthday</span><span>[Tua Data]</span></li>
-              <li><span>Timezone</span><span>CET / UTC+1</span></li>
-              <li><span>Vibe</span><span>Nocturnal</span></li>
-            </ul>
-          </div>
-        </div>
-      </aside>
-
-      <!-- COLONNA DESTRA: RACCONTO E SEZIONI ORIGINALI -->
-      <main class="profile-main-content">
+    <!-- BLOCCO PRINCIPALE PROFILO (FOTO + NOME + TAGS) -->
+    <div class="profile-card-main">
+      <!-- Sostituisci il link dell'immagine con la tua foto profilo -->
+      <img src="https://via.placeholder.com/200x200/111/fff?text=Seea" alt="Profile Picture" class="profile-pic">
+      
+      <div class="profile-header-info">
+        <h2>Seea <span style="font-weight: 600; font-size: 1.1rem; color: #666;">(Seea Star)</span></h2>
+        <p style="font-size: 0.8rem; color: #555;">Benvenuto nel mio spazio personale.</p>
         
-        <div class="bio-card">
-          <h2>Chi c'è dietro lo schermo</h2>
-          <p>Ciao! Se sei arrivato fin qui, probabilmente vuoi sapere qualcosa in più su chi gestisce questo spazio anziché leggere le solite descrizioni standard.</p>
-          <p>Questo sito è nato come un rifugio digitale, un angolo di internet vecchio stile costruito senza algoritmi di mezzo, dove poter sperimentare grafiche, idee e progetti personali senza fretta.</p>
+        <div class="tags-row">
+          <span class="tag">Ragazza</span>
+          <span class="tag">21 Dicembre</span>
+          <span class="tag">Sagittario ♐</span>
+          <span class="tag">INTP 🧠</span>
         </div>
+      </div>
+    </div>
 
-        <div class="extra-grid">
-          <!-- Sezione 1: Curiosità / Random Facts -->
-          <div class="box">
-            <div class="box-header-accent"><span>random facts</span><span>✦</span></div>
-            <div class="box-body">
-              <p style="font-size: 0.78rem; line-height: 1.5;">
-                • Odio i font sgranati.<br>
-                • Ascolto musica a ripetizione finché non mi stanco.<br>
-                • Preferisco il fai-da-te digitale piuttosto che usare template pronti.
-              </p>
-            </div>
-          </div>
+    <!-- SEZIONE RACCONTO -->
+    <div class="section-box">
+      <h3>Dietro le quinte</h3>
+      <p>Questo sito nasce dal desiderio di avere un piccolo angolo personale sulla rete, lontano dai social network moderni e dagli standard preconfezionati. Qui sperimento, progetto e sistemo tutto a modo mio.</p>
+      <p>Essendo un'INTP, passo molto tempo a pensare a come strutturare le cose, smontarle e ricostruirle finché non ottengo esattamente il risultato visivo e logico che ho in mente.</p>
+    </div>
 
-          <!-- Sezione 2: Preferenze / Fissazioni attuali -->
-          <div class="box">
-            <div class="box-header-accent"><span>current obsessions</span><span>⚡</span></div>
-            <div class="box-body">
-              <p style="font-size: 0.78rem; line-height: 1.5;">
-                • Estetiche retro e layout puliti.<br>
-                • Ottimizzare ogni singolo pixel.<br>
-                • Collezionare timbri e bottoni per siti web.
-              </p>
-            </div>
-          </div>
-        </div>
-
-      </main>
-
+    <!-- SEZIONE NOTE O CURIOSITÀ -->
+    <div class="box-light">
+      <h3>Qualche dettaglio in più</h3>
+      <p>Se ti stai chiedendo perché ho scelto questo stile retrò e minimalista, la risposta è semplice: amo l'estetica pulita e l'atmosfera dei vecchi siti web personali. Niente distrazioni, solo contenuti autentici.</p>
     </div>
 
   </div>
