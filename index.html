@@ -142,12 +142,22 @@
       object-fit: contain;
     }
 
+    /* Testo bio fluido senza bordi o riquadri */
+    .bio-text {
+      font-size: 0.95rem;
+      font-weight: 600;
+      line-height: 1.6;
+      color: #333333;
+      max-width: 600px;
+      margin-top: 8px;
+    }
+
     .social-buttons-container {
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
       justify-content: center;
-      margin-top: 10px;
+      margin-top: 5px;
       padding-top: 20px;
       border-top: 2px dashed #ddd;
     }
@@ -210,7 +220,9 @@
         <h2>Seea <span style="font-weight: 600; font-size: 1.3rem; color: #666;">(Seea Star)</span></h2>
         
         <div class="tags-row">
-          <span class="tag">Female</span>
+          <span class="tag">
+            <img src="Female.png" alt="Female" class="tag-icon"> Female
+          </span>
           <span class="tag">
             <img src="cake.png" alt="Cake" class="tag-icon"> December 21
           </span>
@@ -219,6 +231,14 @@
           </span>
           <span class="tag">INTP</span>
         </div>
+
+        <!-- Testo bio fluido senza rettangoli -->
+        <p class="bio-text">
+          Living in Italy (｡⁠◕⁠‿⁠◕⁠｡) High school student attending a culinary school 🍳<br>
+          I make websites just for fun on Neocities, and it has become one of my favorite hobbies ✨<br>
+          I love taking random photos when I'm out and about 📸<br>
+          No specific favorite color, I like them all 🎨 and huge anime fan (check my watchlist!) (⁠☆⁠ω⁠☆⁠)
+        </p>
       </div>
     </div>
 
