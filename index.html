@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>COSMIC-S - About Me</title>
+  <title>COSMIC-S - About Me (Wiki)</title>
   <link rel="icon" type="image/png" href="https://cosmic-seea.neocities.org/stamp-5.png">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -316,26 +316,53 @@
     }
     .pure-card-img:hover { transform: translateY(-2px); }
 
-    .about-info-box {
+    /* Stile in perfetto formato Wikipedia per l'enciclopedia personale */
+    .wiki-article {
       background: #ffffff;
       border: 2px solid #111111;
       border-radius: 16px;
-      padding: 14px;
-      margin-top: 10px;
+      padding: 16px;
       box-shadow: 3px 3px 0px #111111;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       line-height: 1.6;
     }
-    .about-info-box h3 {
-      font-size: 0.9rem;
+    .wiki-title {
+      font-size: 0.95rem;
       font-weight: 800;
-      margin-bottom: 8px;
-      border-bottom: 2px dashed #111;
+      border-bottom: 2px solid #111;
       padding-bottom: 4px;
+      margin-bottom: 8px;
     }
-    .about-info-box ul {
-      list-style-type: square;
-      padding-left: 20px;
+    .wiki-section-title {
+      font-size: 0.82rem;
+      font-weight: 800;
+      margin-top: 12px;
+      margin-bottom: 4px;
+      border-bottom: 1px dashed #444;
+      padding-bottom: 2px;
+    }
+    .wiki-infobox {
+      background: #f9f9fb;
+      border: 1px solid #111;
+      border-radius: 10px;
+      padding: 10px;
+      margin-bottom: 12px;
+      font-size: 0.72rem;
+    }
+    .wiki-infobox table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .wiki-infobox th {
+      text-align: left;
+      width: 35%;
+      border-bottom: 1px solid #ddd;
+      padding: 3px 0;
+      font-weight: 800;
+    }
+    .wiki-infobox td {
+      border-bottom: 1px solid #ddd;
+      padding: 3px 0;
     }
 
     /* --- CODICE RESPONSIVE PER SMARTPHONE --- */
@@ -431,28 +458,29 @@
         </div>
       </aside>
 
-      <!-- COLONNA CENTRALE (CONTENUTO ABOUT ME) -->
+      <!-- COLONNA CENTRALE (ARTICOLO STILE WIKIPEDIA) -->
       <main class="col-center">
-        <div style="background: #111111; color: #ffffff; border: 2px solid #111111; border-radius: 22px; overflow: hidden; width: 100%; box-shadow: 4px 4px 0px #F3EEDA;">
-          <div class="box-body" style="font-size: 0.82rem; line-height: 1.5; padding: 20px;">
-            <p style="font-weight: 800; font-size: 1rem; margin-bottom: 8px; color: #ffffff;">✦ Meet Seea ✦</p>
-            <p style="margin-bottom: 10px;">Welcome to my personal corner! I'm Seea, creator and webmaster behind <strong>COSMIC-S</strong>.</p>
-            <p style="margin-bottom: 10px;">I love everything related to retro web design, indie aesthetics, digital stamps, collecting stamps, and building cute interactive spaces on the internet.</p>
-            <p style="margin-bottom: 10px;">When I'm not coding or fixing layout bugs, you can usually find me reading manga, watching anime (big fan of <em>Spy x Family</em>! 🥜), or listening to music while exploring other cool websites in the Neocities community.</p>
-            <p>Feel free to look around, sign my guestbook, or grab my site button!</p>
+        <div class="wiki-article">
+          <div class="wiki-title">Seea (Webmaster)</div>
+          
+          <!-- Tabella Infobox stile Wikipedia -->
+          <div class="wiki-infobox">
+            <table>
+              <tr><th>Name</th><td>Seea</td></tr>
+              <tr><th>Occupation</th><td>Student, Web Designer</td></tr>
+              <tr><th>Website</th><td>COSMIC-S</td></tr>
+              <tr><th>Platform</th><td>Neocities / GitHub</td></tr>
+              <tr><th>Interests</th><td>Web development, stamps, anime</td></tr>
+            </table>
           </div>
-        </div>
 
-        <!-- SEZIONE DETTAGLI / INFO PERSONALI -->
-        <div class="about-info-box">
-          <h3>✎ Quick Facts</h3>
-          <ul>
-            <li><strong>Name:</strong> Seea</li>
-            <li><strong>Pronouns:</strong> She/Her</li>
-            <li><strong>Personality:</strong> INTP 🧩</li>
-            <li><strong>Zodiac Sign:</strong> Sagittarius ♐</li>
-            <li><strong>Hobbies:</strong> Web design, coding mini-games, collecting digital stamps, drawing.</li>
-          </ul>
+          <p><strong>Seea</strong> is an independent web designer and creator of the personal website <em>COSMIC-S</em>, hosted within the Neocities community. Known for embracing the retro indie web aesthetic, she designs and builds browser pages, mini-games, and custom digital collections.</p>
+
+          <div class="wiki-section-title">1. Background & Website History</div>
+          <p>COSMIC-S was launched as a creative project to explore HTML, CSS, and JavaScript. The site serves as a digital archive featuring custom navigation menus, digital stamp collections, blog entries, and interactive widgets.</p>
+
+          <div class="wiki-section-title">2. Interests & Culture</div>
+          <p>Seea's online projects heavily draw inspiration from classic early-2000s web culture combined with modern indie aesthetics. She is an avid follower of manga and anime series, frequently referencing titles such as <em>Spy x Family</em> within the community guestbooks.</p>
         </div>
 
         <div style="width: 100%;">
